@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
+import { BASE_URL } from "@/lib/meta";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = process.env.SITE_ORIGIN || "http://localhost:3000";
   return {
     rules: [{ userAgent: "*", allow: "/" }],
-    sitemap: `${base}/sitemap.xml`,
+    sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }

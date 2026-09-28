@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { BASE_URL } from "@/lib/meta";
+
 /*
  * Sitemap contents are load-bearing for the demo:
  *
@@ -43,9 +45,8 @@ const PATHS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.SITE_ORIGIN || "http://localhost:3000";
   return PATHS.map((p, i) => ({
-    url: `${base}${p === "/" ? "/" : p}`,
+    url: `${BASE_URL}${p === "/" ? "/" : p}`,
     lastModified: new Date(2026, 0, 1 + i),
     changeFrequency: p === "/" ? "weekly" : "monthly",
     priority: p === "/" ? 1 : 0.6,
