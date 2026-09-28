@@ -17,7 +17,7 @@ import type { Metadata } from "next";
  */
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Partners",
+    title: "Partner and tool policy",
     description:
       "The tools, hosts and agencies we work alongside in Bhadrapur, and the ones we deliberately do not use because their reporting cannot be verified.",
     alternates: { canonical: "https://ekadantageny.com/partner-program" },
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Page() {
   return (
     <>
-      <h1>Partners</h1>
+      <h1>Partner and tool policy</h1>
       <p className="lede">
         Most of what we recommend is a tool we do not resell. This page lists the ones we
         do work with, and the ones we refuse to.

@@ -6,10 +6,12 @@ import { canonical } from "@/lib/meta";
  * Metadata for a page that is meant to come back CLEAN.
  *
  * Titles must land in 25..60 chars *after* the layout template appends
- * " | Ekadantageny" (16 chars), so the raw string stays within 9..44. Getting
- * this wrong turns a clean page into a title_too_short / title_too_long
- * finding, which is exactly the kind of accidental defect that makes a test
- * suite lie.
+ * " | Ekadantageny", which is 15 characters including the leading space. So the
+ * raw string must sit within 10..45; a bare noun like "Pricing" is 7 and comes
+ * out at 22, which is a real title_too_short finding and not a rounding error.
+ *
+ * This is not hypothetical. Eight of the twenty-three demo pages shipped short
+ * titles the first time, and the audit was right about every one of them.
  */
 export async function cleanMeta(
   rawTitle: string,

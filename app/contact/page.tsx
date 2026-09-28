@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export async function generateMetadata() {
-  return cleanMeta("Contact", "Book a free revenue audit, or send a WhatsApp message. We will tell you within one working day, including if the answer is that you do not need us.", "/contact");
+  return cleanMeta("Contact and opening hours", "Book a free revenue audit, or send a WhatsApp message. We will tell you within one working day, including if the answer is that you do not need us.", "/contact");
 }
 
 const LINKS = [
@@ -24,7 +24,7 @@ const LINKS = [
 export default function Page() {
   return (
     <>
-      <h1>Contact</h1>
+      <h1>Contact and opening hours</h1>
       <p className="lede">Book a free revenue audit, or send a WhatsApp message. We will tell you within one working day, including if the answer is that you do not need us.</p>
 
       <h2>In detail</h2>

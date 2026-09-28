@@ -9,7 +9,7 @@ import { cleanMeta, LongBody } from "@/components/standard";
  */
 export async function generateMetadata() {
   return cleanMeta(
-    "The team",
+    "The team behind the work",
     "Four people in Bhadrapur doing measurement, paid media, search and design. No account managers, no subcontractors you never meet.",
     "/about/team"
   );
@@ -26,7 +26,7 @@ const BROKEN_LD = `{
 export default function Page() {
   return (
     <>
-      <h1>The team</h1>
+      <h1>The team behind the work</h1>
       <p className="lede">
         Four people, one office in Bhadrapur, and no subcontracted account management.
       </p>

@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export async function generateMetadata() {
-  return cleanMeta("Services", "Four services, each measured against revenue: attribution, paid advertising, search optimisation and conversion rate work.", "/services");
+  return cleanMeta("Marketing services", "Four services, each measured against revenue: attribution, paid advertising, search optimisation and conversion rate work.", "/services");
 }
 
 const LINKS = [
@@ -24,7 +24,7 @@ const LINKS = [
 export default function Page() {
   return (
     <>
-      <h1>Services</h1>
+      <h1>Marketing services</h1>
       <p className="lede">Four services, each measured against revenue: attribution, paid advertising, search optimisation and conversion rate work.</p>
 
       <h2>In detail</h2>

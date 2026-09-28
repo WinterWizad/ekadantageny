@@ -15,7 +15,22 @@ import "./globals.css";
  * a page that is otherwise clean.
  */
 
+/*
+ * metadataBase is what Next uses to resolve a RELATIVE og:image into an absolute
+ * URL. Without it, every social preview falls back to localhost, which is
+ * invisible in local testing and broken in production - the build only warns
+ * about it, and a demo that cannot see its own warning is not a useful test bed.
+ *
+ * VERCEL_URL is injected by Vercel itself, so the deployed build needs no
+ * configuration; SITE_ORIGIN overrides it for local testing on another port.
+ */
+const metadataBase = new URL(
+  process.env.SITE_ORIGIN ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
+);
+
 export const metadata: Metadata = {
+  metadataBase,
   title: {
     default: "Ekadantageny - revenue-focused marketing",
     template: "%s | Ekadantageny",
@@ -69,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             the crawl was able to see the whole site.
           */}
           <Link href="/legacy-pricing">Archive pricing (2023)</Link>
+          <Link href="/status">Service status</Link>
         </footer>
       </body>
     </html>

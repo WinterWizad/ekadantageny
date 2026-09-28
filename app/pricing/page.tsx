@@ -10,7 +10,7 @@ import Link from "next/link";
  */
 export async function generateMetadata() {
   return cleanMeta(
-    "Pricing",
+    "Pricing and what is included",
     "Three ways to work with us, priced in Nepali rupees, with what each one includes stated up front rather than revealed after the first call.",
     "/pricing"
   );
@@ -25,7 +25,7 @@ const TIERS = [
 export default function Page() {
   return (
     <>
-      <h1>Pricing</h1>
+      <h1>Pricing and what is included</h1>
       <p className="lede">
         Three ways to work together. Every number below is the number you pay.
       </p>

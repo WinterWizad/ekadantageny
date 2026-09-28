@@ -14,7 +14,7 @@ import { cleanMeta, LongBody } from "@/components/standard";
  */
 export async function generateMetadata() {
   return cleanMeta(
-    "Glossary",
+    "Glossary of measurement terms",
     "Plain definitions of the measurement terms we use: attribution, qualified enquiry, blended cost, incrementality and the rest.",
     "/glossary"
   );
@@ -23,7 +23,7 @@ export async function generateMetadata() {
 export default function Page() {
   return (
     <>
-      <h1>Glossary</h1>
+      <h1>Glossary of measurement terms</h1>
       <p className="lede">
         The terms we use in reports, defined the way we use them, because half of
         marketing disagreement is really a disagreement about definitions.

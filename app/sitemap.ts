@@ -34,9 +34,11 @@ const PATHS = [
   "/blog/utm-guide",
   "/blog/2024-benchmark",
   "/blog/meta-ads-guide",
+  "/blog/measurement-stack",
   "/tools/roi-calculator",
   "/partners",
   "/glossary",
+  "/status",
   "/legacy-brochure.html",
 ];
 

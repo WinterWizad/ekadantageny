@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export async function generateMetadata() {
-  return cleanMeta("Blog", "Notes on attribution, search, and measurement for small businesses, written by the people doing the work.", "/blog");
+  return cleanMeta("Writing on measurement", "Notes on attribution, search, and measurement for small businesses, written by the people doing the work.", "/blog");
 }
 
 const LINKS = [
@@ -13,6 +13,7 @@ const LINKS = [
   { href: "/case-studies/khaltra", label: "Case study: Khaltra" },
   { href: "/blog/utm-guide", label: "How UTM tracking actually works" },
   { href: "/blog/2024-benchmark", label: "The 2024 local marketing benchmark" },
+  { href: "/blog/measurement-stack", label: "What belongs in a measurement stack" },
   { href: "/blog/meta-ads-guide", label: "A short guide to Meta ads" },
   { href: "/tools/roi-calculator", label: "ROI calculator" },
   { href: "/partners", label: "Partners" },
@@ -24,7 +25,7 @@ const LINKS = [
 export default function Page() {
   return (
     <>
-      <h1>Blog</h1>
+      <h1>Writing on measurement</h1>
       <p className="lede">Notes on attribution, search, and measurement for small businesses, written by the people doing the work.</p>
 
       <h2>In detail</h2>

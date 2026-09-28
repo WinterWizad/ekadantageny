@@ -8,3 +8,8 @@ build/
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# Local run artifacts. These are outputs of `npm run start`, not source, and
+# committing them would put a live PID and a build log into every revert diff.
+server.log
+server.pid

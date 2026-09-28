@@ -6,12 +6,21 @@ import type { Metadata } from "next";
  *                        template, so the tag is genuinely empty. Using title:""
  *                        would have rendered " | Ekadantageny" instead, which is
  *                        15 characters of title, not a missing title.
- *   missing_description - no description emitted at all
+ *   missing_description - `description: ""`, which is the only way to actually
+ *                        suppress the tag. Simply omitting the key does NOT
+ *                        produce a page with no description: Next.js merges
+ *                        metadata down from the root layout, so the page would
+ *                        silently inherit the layout's description and look
+ *                        clean. That inheritance is why "no description" is a
+ *                        rare defect in an App Router site and a common one in
+ *                        plain HTML, and it is worth knowing which you are
+ *                        looking at before recommending a fix.
  *   heading_skip        - h1 jumps to h3 with no h2 between them
  *   multiple_h1        - two h1 elements
  */
 export const metadata: Metadata = {
   title: { absolute: "" },
+  description: "",
 };
 
 export default function Page() {
