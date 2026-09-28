@@ -11,14 +11,30 @@ import { headers } from "next/headers";
  * ekadantageny.com, on a Vercel preview domain, and on a staging host.
  */
 /**
- * Build-time deployment origin. Vercel injects VERCEL_URL (host only, no
- * scheme); SITE_ORIGIN overrides it for a custom domain or local testing.
+ * Build-time deployment origin.
+ *
+ * Resolution order:
+ *   SITE_ORIGIN                     operator override (custom domain / local)
+ *   VERCEL_PROJECT_PRODUCTION_URL   Vercel's STABLE production alias, present
+ *                                   in every deployment. Use this BEFORE
+ *                                   VERCEL_URL: VERCEL_URL is the per-deployment
+ *                                   host (e.g. project-xxxx.vercel.app) and
+ *                                   committing it to robots.txt / the sitemap
+ *                                   makes those URLs change on every deploy and
+ *                                   never match the host a visitor used.
+ *   VERCEL_URL                      fallback for preview deployments
+ *   http://localhost:3000           local fallback only
+ *
  * Must never fall back to localhost on a deployed site, or robots.txt and the
  * sitemap ship sitemap URLs that only resolve on the dev machine.
  */
 export const BASE_URL =
   process.env.SITE_ORIGIN ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000");
 
 export async function origin(): Promise<string> {
   const h = await headers();
