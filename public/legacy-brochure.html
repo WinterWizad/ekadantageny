@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  DEFECT: hreflang_without_lang
+
+  <html> carries no lang attribute. Exported from a brochure tool in 2022 and never
+  touched since. Every consumer that picks a pronunciation or a translation voice
+  from this document has to guess, and screen readers fall back to whatever the
+  user's default locale happens to be.
+
+  This is served as a static file from /public rather than as a Next.js route on
+  purpose: the root layout's <html lang="en"> makes it impossible to ship a
+  lang-less page from a route, and forcing that with a second root layout would be
+  a contrived way to produce a defect. Real sites accumulate pages that predate
+  their framework.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Ekadantageny brochure 2022</title>
+    <meta name="description" content="The original Ekadantageny company brochure, exported as static HTML in 2022 and still reachable." />
+    <link rel="canonical" href="/legacy-brochure.html" />
+    <meta property="og:image" content="/og-default.png" />
+  </head>
+  <body>
+    <h1>Ekadantageny, 2022</h1>
+    <p>
+      We are a marketing agency working with businesses across Jhapa. This brochure was
+      prepared in 2022 and describes the services as they were then. Prices, tooling and
+      the team have all changed since, and the current pricing is on the pricing page.
+    </p>
+    <h2>What we did then</h2>
+    <p>
+      Website builds, social media management, print, and hoarding design. The measurement
+      work that the agency does now was not part of the offer in 2022, which is the main
+      reason this document exists only to be retired.
+    </p>
+    <h2>Getting in touch</h2>
+    <p>
+      Bhadrapur, Jhapa. Phone and email details on the current contact page, which is
+      maintained. This brochure is retained for the record and is not updated.
+    </p>
+  </body>
+</html>

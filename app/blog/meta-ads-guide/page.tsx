@@ -1,0 +1,33 @@
+import { cleanMeta, LongBody } from "@/components/standard";
+
+/*
+ * DEFECT: title_too_long
+ *
+ * "A short guide to Meta ads that actually make money" renders as 63 characters
+ * with the layout template, over the 60-character floor. Google truncates around
+ * 580px on desktop, which is roughly 60 characters, so the tail of this title is
+ * simply never shown.
+ */
+export async function generateMetadata() {
+  return cleanMeta(
+    "A short guide to Meta ads that actually make money",
+    "How to run a Meta campaign for a small business: one objective, one audience, and a landing page that answers the objection in the first screen.",
+    "/blog/meta-ads-guide"
+  );
+}
+
+export default function Page() {
+  return (
+    <>
+      <h1>A short guide to Meta ads that actually make money</h1>
+      <p className="lede">
+        Most small businesses start with four objectives and end with no data on any of
+        them. Start with one.
+      </p>
+      <h2>Pick one objective</h2>
+      <LongBody seed="meta-objective" />
+      <h2>Write the landing page first</h2>
+      <LongBody seed="meta-landing" />
+    </>
+  );
+}
