@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "How UTM tracking actually works",
-    description: "UTM parameters are a naming convention attached to a link. Learn the four parameters, what each records, and which steps in the flow usually break so your reports stay trustworthy.",
+    description: "UTM parameters are a naming convention attached to a link. Learn the four parameters, what each records, and which step in the flow usually breaks.",
     alternates: { canonical: await canonical("/blog/utm-guide") },
   };
 }
