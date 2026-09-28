@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Revenue attribution",
     description:
       "Attribution tells you which channel produced the enquiry. We instrument the whole path so the next budget decision has evidence behind it.",
+    alternates: { canonical: await canonical("/services/revenue-attribution") },
   };
 }
 

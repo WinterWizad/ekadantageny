@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "How UTM tracking actually works",
-    description: "A short guide to UTM parameters.",
+    description: "UTM parameters are a naming convention attached to a link. Learn the four parameters, what each records, and which steps in the flow usually break so your reports stay trustworthy.",
     alternates: { canonical: await canonical("/blog/utm-guide") },
   };
 }
@@ -30,7 +30,7 @@ export default function Page() {
       </p>
 
       <h2>The diagram nobody has</h2>
-      <img src="/images/utm-flow.png" />
+      <img src="/images/utm-flow.png" alt="Diagram of the UTM flow: an ad, a link with parameters, a landing page, and a recorded visit" />
       <p>
         The diagram above is the whole flow: an ad, a link with parameters, a landing
         page, and a recorded session. Every one of those four steps can break, and
@@ -40,7 +40,7 @@ export default function Page() {
       <h2>What actually breaks</h2>
       <LongBody seed="utm-guide" />
 
-      <img src="/images/utm-fields.png" />
+      <img src="/images/utm-fields.png" alt="The UTM parameters that analytics reads: source, medium, campaign, content and term" />
       <LongBody seed="utm-fields" />
     </>
   );

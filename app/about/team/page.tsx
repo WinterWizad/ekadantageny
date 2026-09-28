@@ -20,7 +20,7 @@ const BROKEN_LD = `{
   "@type": "Organization",
   "name": "Ekadantageny",
   "url": "https://ekadantageny.com",
-  "foundingDate": "2021",
+  "foundingDate": "2021"
 }`;
 
 export default function Page() {

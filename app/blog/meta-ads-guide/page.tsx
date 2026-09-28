@@ -10,7 +10,7 @@ import { cleanMeta, LongBody } from "@/components/standard";
  */
 export async function generateMetadata() {
   return cleanMeta(
-    "A short guide to Meta ads that actually make money",
+    "A short guide to Meta ads",
     "How to run a Meta campaign for a small business: one objective, one audience, and a landing page that answers the objection in the first screen.",
     "/blog/meta-ads-guide"
   );

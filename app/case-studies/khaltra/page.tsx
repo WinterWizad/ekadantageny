@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonical } from "@/lib/meta";
 
 /*
  * DEFECTS: thin_content + title_too_short
@@ -8,11 +9,14 @@ import type { Metadata } from "next";
  * is the more realistic version of the bug - but either way the page has to be
  * genuinely short for thin_content to fire, so both thresholds are set here.
  */
-export const metadata: Metadata = {
-  title: "Khaltra",
-  description:
-    "How a local retailer in Bhadrapur cut paid spend by a third and doubled the enquiries that arrived, by fixing measurement before buying anything else.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Khaltra",
+    description:
+      "How a local retailer in Bhadrapur cut paid spend by a third and doubled the enquiries that arrived, by fixing measurement before buying anything else.",
+    alternates: { canonical: await canonical("/case-studies/khaltra") },
+  };
+}
 
 export default function Page() {
   return (

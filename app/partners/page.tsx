@@ -20,8 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Partner and tool policy",
     description:
       "The tools, hosts and agencies we work alongside in Bhadrapur, and the ones we deliberately do not use because their reporting cannot be verified.",
-    alternates: { canonical: "https://ekadantageny.com/partner-program" },
-    openGraph: { images: [] },
+    alternates: { canonical: await canonical("/partners") },
   };
 }
 
