@@ -1,0 +1,23 @@
+# Ekadantageny — full text index
+
+Every key page with its description, for agents that want the whole
+surface in one fetch rather than following links.
+
+## Home
+URL: https://ekadantageny.vercel.app/
+Summary: Revenue-focused marketing agency in Bhadrapur, Jhapa.
+
+## Revenue attribution
+URL: https://ekadantageny.vercel.app/services/revenue-attribution
+Summary: Which channel produced the enquiry, measured before the next budget decision.
+
+## Pricing
+URL: https://ekadantageny.vercel.app/pricing
+Summary: Three engagements, priced in Nepali rupees, with inclusions stated up front.
+
+## Case studies
+URL: https://ekadantageny.vercel.app/case-studies
+Summary: Client work with the measurement that was in place before and after.
+
+---
+Generated from config/site.yaml on 2026-09-28.

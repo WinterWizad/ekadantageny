@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Ekadantageny - revenue-focused marketing",
     description:
       "A marketing agency in Bhadrapur, Jhapa that measures campaigns by the revenue they produce, and says so when they do not.",
-    images: ["/og-default.png"],
+    images: ["/og-default.jpg"],
   },
 };
 

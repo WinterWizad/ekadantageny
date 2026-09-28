@@ -1,0 +1,12 @@
+# Ekadantageny
+
+> A marketing agency that builds campaigns tied to revenue rather than impressions, and reports the attribution honestly.
+
+This file lists the pages worth reading first, in priority order.
+
+## Docs
+
+- [Home](https://ekadantageny.vercel.app/): Revenue-focused marketing agency in Bhadrapur, Jhapa.
+- [Revenue attribution](https://ekadantageny.vercel.app/services/revenue-attribution): Which channel produced the enquiry, measured before the next budget decision.
+- [Pricing](https://ekadantageny.vercel.app/pricing): Three engagements, priced in Nepali rupees, with inclusions stated up front.
+- [Case studies](https://ekadantageny.vercel.app/case-studies): Client work with the measurement that was in place before and after.
