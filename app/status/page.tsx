@@ -1,19 +1,11 @@
 import { cleanMeta, LongBody } from "@/components/standard";
 
 /*
- * DEFECT: missing_h1
- *
- * The page's first heading is an H2. There is no H1 anywhere, so the page never
- * states what it is at the top level.
- *
- * This is the ordinary way the defect appears: a page is built from a component
- * that assumes the surrounding template already supplied the H1, then it is
- * dropped somewhere that template does not apply - a status page, a print view,
- * an embedded panel, a CMS block. It is not a typo anyone would catch by reading
- * the page, which is why an automated check earns its keep.
- *
- * Deliberately NOT thin, so the only finding this page produces is missing_h1.
- * A page that trips three checks proves nothing about any of them.
+ * FIXED (2026-09-29, tier-2, validate-gated): missing_h1 — the first heading
+ * was an H2 with no H1 anywhere, which is how the defect usually appears: a page
+ * built from a component that assumed the surrounding template supplied the H1,
+ * then dropped somewhere no template applies. Now the page declares its identity
+ * at the top level. Deliberately NOT thin, so no other check fires here.
  */
 export async function generateMetadata() {
   return cleanMeta(
@@ -32,8 +24,7 @@ const INCIDENTS = [
 export default function Page() {
   return (
     <>
-      {/* No H1. The first heading on the page is an H2, which is the defect. */}
-      <h2>All systems operational</h2>
+      <h1>All systems operational</h1>
       <p className="lede">
         Tracking is running. Last checked six minutes ago.
       </p>

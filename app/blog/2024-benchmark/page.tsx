@@ -2,12 +2,10 @@ import { cleanMeta, LongBody } from "@/components/standard";
 import Link from "next/link";
 
 /*
- * DEFECT: images_missing_dimensions
- *
- * <img> tags WITH alt text but WITHOUT width/height. The alt is present because
- * someone was asked to add it; the dimensions were never considered, which is the
- * usual order. Cumulative Layout Shift is the cost, and it is measurable on field
- * data for any page with traffic.
+ * FIXED (2026-09-29, tier-2, validate-gated): images_missing_dimensions — the
+ * two <img> tags had alt (someone asked for that) but no width/height, so the
+ * browser reserved no space until download. The assets are 8x8 placeholder PNGs;
+ * declared dimensions now match and layout shift is gone.
  */
 export async function generateMetadata() {
   return cleanMeta(
@@ -27,11 +25,11 @@ export default function Page() {
       </p>
 
       <h2>Spend against attributable revenue</h2>
-      <img src="/images/benchmark-spend.png" alt="Bar chart comparing marketing spend against attributable revenue for 140 businesses" />
+      <img src="/images/benchmark-spend.png" width="8" height="8" alt="Bar chart comparing marketing spend against attributable revenue for 140 businesses" />
       <LongBody seed="benchmark-chart" />
 
       <h2>What the businesses that could measure had in common</h2>
-      <img src="/images/benchmark-channels.png" alt="Channel mix for businesses with working attribution" />
+      <img src="/images/benchmark-channels.png" width="8" height="8" alt="Channel mix for businesses with working attribution" />
       <LongBody seed="benchmark-findings" />
 
       <p>

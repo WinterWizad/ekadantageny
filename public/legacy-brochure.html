@@ -1,11 +1,10 @@
 <!doctype html>
 <!--
-  DEFECT: hreflang_without_lang
-
-  <html> carries no lang attribute. Exported from a brochure tool in 2022 and never
+  FIXED (2026-09-29, tier-2, validate-gated): hreflang_without_lang — <html>
+  carried no lang attribute. Exported from a brochure tool in 2022 and never
   touched since. Every consumer that picks a pronunciation or a translation voice
-  from this document has to guess, and screen readers fall back to whatever the
-  user's default locale happens to be.
+  from this document had to guess, and screen readers fell back to whatever the
+  user's default locale happened to be. It now declares lang="en".
 
   This is served as a static file from /public rather than as a Next.js route on
   purpose: the root layout's <html lang="en"> makes it impossible to ship a
@@ -13,7 +12,7 @@
   a contrived way to produce a defect. Real sites accumulate pages that predate
   their framework.
 -->
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Ekadantageny brochure 2022</title>
