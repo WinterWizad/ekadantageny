@@ -16,3 +16,7 @@ server.pid
 
 # Generated machine-readable layer (SEO Workflow Tier 2 output). Regenerated
 # against the live origin by machine-readable.js and shipped 2026-09-28.
+
+# Agnes image-generation source files. Large generators (2K PNG) that the
+# resized web assets are derived from; keep them out of the repo.
+outputs/
