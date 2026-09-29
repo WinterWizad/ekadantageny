@@ -6,6 +6,10 @@
   from this document had to guess, and screen readers fell back to whatever the
   user's default locale happened to be. It now declares lang="en".
 
+  FIXED (2026-09-29, tier-2, validate-gated): missing_breadcrumb_schema — a
+  static /public file does not inherit the Next layout's BreadcrumbJsonLd
+  component, so it carries its own BreadcrumbList block below.
+
   This is served as a static file from /public rather than as a Next.js route on
   purpose: the root layout's <html lang="en"> makes it impossible to ship a
   lang-less page from a route, and forcing that with a second root layout would be
@@ -19,6 +23,16 @@
     <meta name="description" content="The original Ekadantageny company brochure, exported as static HTML in 2022 and still reachable." />
     <link rel="canonical" href="/legacy-brochure.html" />
     <meta property="og:image" content="/og-default.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+        { "@type": "ListItem", "position": 2, "name": "Legacy brochure", "item": "/legacy-brochure.html" }
+      ]
+    }
+    </script>
   </head>
   <body>
     <h1>Ekadantageny, 2022</h1>
