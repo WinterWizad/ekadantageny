@@ -1,3 +1,4 @@
+import { cleanMeta } from "@/components/standard";
 import type { Metadata } from "next";
 
 /*
@@ -17,11 +18,20 @@ import type { Metadata } from "next";
  *                        looking at before recommending a fix.
  *   heading_skip        - h1 jumps to h3 with no h2 between them
  *   multiple_h1        - two h1 elements
+ *
+ * FIXED (2026-09-29, tier-2, validate-gated): missing_title, missing_description,
+ * canonical_missing — the page is indexed and will remain so until a human
+ * deletes or redirects it, so while it lives it gets a real title, a real
+ * description, and a self-canonical. heading_skip and multiple_h1 are
+ * structural, not a sanctioned tier-2 action; they stay reported.
  */
-export const metadata: Metadata = {
-  title: { absolute: "" },
-  description: "",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return cleanMeta(
+    "Legacy offer (retired)",
+    "The retired optimisation bundle from 2023, still indexed and still confusing people who arrive from search. No longer active.",
+    "/services/legacy-offer"
+  );
+}
 
 export default function Page() {
   return (
