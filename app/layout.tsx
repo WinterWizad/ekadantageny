@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL } from "@/lib/meta";
+import BreadcrumbJsonLd from "@/components/breadcrumb-json-ld";
 import "./globals.css";
 
 /*
- * DELIBERATE OMISSION - missing_breadcrumb_schema
- *
- * This layout ships no BreadcrumbList JSON-LD on any page. That is a genuine
- * template-level bug (the check fires on every non-homepage page), and it is
- * the case that proves the audit's `concentration` verdict: one bug in a shared
- * layout must be reported as ONE problem, not N per-page problems.
- *
- * The homepage deliberately does carry Organization schema, so that
- * missing_org_schema - which only ever fires on the homepage - is exercised by
- * a page that is otherwise clean.
+ * FIXED (2026-09-29, tier-2, validate-gated): missing_breadcrumb_schema — the
+ * shared layout used to ship no BreadcrumbList JSON-LD, which the audit reported
+ * on every non-home page. BreadcrumbJsonLd (components/breadcrumb-json-ld.tsx)
+ * now emits it per path from this one mount point. The homepage still carries
+ * Organization schema, and missing_org_schema remains exercised by a clean page.
  */
 
 /*
@@ -59,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <BreadcrumbJsonLd />
         <header>
           <Link href="/">Ekadantageny</Link>
           <nav>

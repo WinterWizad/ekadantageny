@@ -14,8 +14,10 @@ import { BASE_URL } from "@/lib/meta";
  *    internal link, and during a truncated crawl it must be reported as
  *    `unverified` instead - because out of scope is not the same as broken.
  *
- *  - /llms.txt and /pricing.md are absent on purpose. They are the two files the
- *    agent will be asked to create under Tier 2, validated, and then reverted.
+ *  - /llms.txt and /pricing.md live in public/ and are served at those stable
+ *    URLs; they are excluded from the sitemap deliberately (they are machine
+ *    representations of pages already listed above, and sitemaps should list
+ *    indexable HTML, not duplicate representations of it).
  */
 const PATHS = [
   "/",
