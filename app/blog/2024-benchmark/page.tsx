@@ -1,4 +1,5 @@
 import { cleanMeta, LongBody } from "@/components/standard";
+import Link from "next/link";
 
 /*
  * DEFECT: images_missing_dimensions
@@ -32,6 +33,11 @@ export default function Page() {
       <h2>What the businesses that could measure had in common</h2>
       <img src="/images/benchmark-channels.png" alt="Channel mix for businesses with working attribution" />
       <LongBody seed="benchmark-findings" />
+
+      <p>
+        On what being able to measure actually requires, in order:{" "}
+        <Link href="/blog/measurement-stack">the measurement stack</Link>.
+      </p>
     </>
   );
 }

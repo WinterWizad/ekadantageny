@@ -1,4 +1,5 @@
 import { LongBody } from "@/components/standard";
+import Link from "next/link";
 import { canonical } from "@/lib/meta";
 import type { Metadata } from "next";
 
@@ -42,6 +43,11 @@ export default function Page() {
 
       <img src="/images/utm-fields.png" alt="The UTM parameters that analytics reads: source, medium, campaign, content and term" />
       <LongBody seed="utm-fields" />
+
+      <p>
+        Next: <Link href="/blog/measurement-stack">what belongs in a measurement stack</Link>,
+        and how it turns tracked clicks into something a business can defend.
+      </p>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import { cleanMeta, LongBody } from "@/components/standard";
+import Link from "next/link";
 
 /*
  * DEFECT: title_too_long
@@ -28,6 +29,12 @@ export default function Page() {
       <LongBody seed="meta-objective" />
       <h2>Write the landing page first</h2>
       <LongBody seed="meta-landing" />
+
+      <p>
+        Before the campaign spends: <Link href="/blog/utm-guide">tag the links</Link> so the
+        reporting has something to read. A campaign without tagged links is a campaign that
+        already lost its data.
+      </p>
     </>
   );
 }

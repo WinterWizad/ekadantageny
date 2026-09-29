@@ -1,4 +1,5 @@
 import { cleanMeta, LongBody } from "@/components/standard";
+import Link from "next/link";
 
 /*
  * DEFECT: slow_pages
@@ -43,6 +44,10 @@ export default async function Page() {
       <LongBody seed="stack-one" />
       <h2>Two: offline conversion import</h2>
       <LongBody seed="stack-two" />
+
+      <p>
+        If you are still deciding how to tag your links: <Link href="/blog/utm-guide">how UTM tracking actually works</Link>.
+      </p>
     </>
   );
 }
